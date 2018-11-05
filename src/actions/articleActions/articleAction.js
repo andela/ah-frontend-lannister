@@ -34,7 +34,7 @@ export const publishNewArticleAction = slug => dispatch => {
     headers: myHeaders
   })
     .then(response => {
-      if (response.status===404){
+      if (response.status !== 201){
         toast.error("Can't Publish, Draft first", { autoClose: 3500, hideProgressBar: true });
       }else{
         toast.success("Article Published Succesfully", { autoClose: 3500, hideProgressBar: true });
